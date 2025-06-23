@@ -1,28 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Top Soccer Players</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Player Info</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .info {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="overlay">
-    <div class="container">
-      <h1>World's Top Soccer Players</h1>
+  <h1>Top Soccer Players</h1>
 
-      <div class="buttons">
-        <button onclick="showInfo('Messi')">Lionel Messi</button>
-        <button onclick="showInfo('Ronaldo')">Cristiano Ronaldo</button>
-        <button onclick="showInfo('Mbappe')">Kylian Mbappé</button>
-      </div>
+  <button onclick="showInfo('messi')">Lionel Messi</button>
+  <button onclick="showInfo('ronaldo')">Cristiano Ronaldo</button>
+  <button onclick="showInfo('mbappe')">Kylian Mbappé</button>
 
-      <div id="info-box" class="info-box">
-        <p>Select a player to see their background and achievements.</p>
-      </div>
-    </div>
+  <div id="messi" class="info">
+    <h2>Lionel Messi</h2>
+    <p>Messi is an Argentine footballer who has won 8 Ballon d'Ors and played for Barcelona and Inter Miami.</p>
   </div>
 
-  <script src="script.js"></script>
+  <div id="ronaldo" class="info">
+    <h2>Cristiano Ronaldo</h2>
+    <p>Ronaldo is a Portuguese striker known for his strength, goal-scoring, and Champions League titles.</p>
+  </div>
+
+  <div id="mbappe" class="info">
+    <h2>Kylian Mbappé</h2>
+    <p>Mbappé is a French forward known for his speed and World Cup win in 2018.</p>
+  </div>
+
+  <script>
+    function showInfo(player) {
+      // Hide all player info first
+      document.getElementById('messi').style.display = 'none';
+      document.getElementById('ronaldo').style.display = 'none';
+      document.getElementById('mbappe').style.display = 'none';
+
+      // Show the selected player's info using if statements
+      if (player === 'messi') {
+        document.getElementById('messi').style.display = 'block';
+      } else if (player === 'ronaldo') {
+        document.getElementById('ronaldo').style.display = 'block';
+      } else if (player === 'mbappe') {
+        document.getElementById('mbappe').style.display = 'block';
+      }
+    }
+  </script>
+
 </body>
 </html>
